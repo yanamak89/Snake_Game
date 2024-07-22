@@ -1,3 +1,12 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using Snake_Game;
+using Snake_Game.Installers;
+using Snake_Game.Lines;
 
-Console.WriteLine("Hello, World!");
+class Program
+{
+    static void Main(string[] args)
+    {
+        LineInstaller line = new LineInstaller();
+        line.DrawShapes();
+    }
+}
