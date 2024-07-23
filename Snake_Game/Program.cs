@@ -1,4 +1,5 @@
 ﻿using Snake_Game;
+using Snake_Game.Enums;
 using Snake_Game.Factory;
 using Snake_Game.Helper;
 using Snake_Game.Installers;
@@ -17,6 +18,8 @@ class Program
         
         Console.ResetColor();
 
-        
+        Snake snake = new Snake();
+        snake.CreateSnake(5, new Point(5, 5, '~'), DirectionEnum.Right);
+        snake.DrawLine();
     }
 }
