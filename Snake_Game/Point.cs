@@ -8,6 +8,12 @@ public class Point
     private int _top;
     private char _symbol;
 
+    public char Symbol
+    {
+        get { return _symbol;}
+        set { _symbol = value; }
+    }
+
     public Point(Point snakeTail)
     {
         _left = snakeTail._left;
@@ -51,5 +57,10 @@ public class Point
     {
         _symbol = ' ';
         DrawPoint();
+    }
+
+    public bool ComparePoints(Point food)
+    {
+        return food._left == _left && food._top == _top;
     }
 }

@@ -56,4 +56,18 @@ public class Snake : Shape
                _direction = DirectionEnum.Down;
           }
      }
+
+     public bool Eat(Point food)
+     {
+          Point head = new Point(_points.Last());
+          head.SetDirection(1,_direction);
+          if (head.ComparePoints(food))
+          {
+               food.Symbol = head.Symbol;
+               _points.Add(food);
+               return true;
+          }
+
+          return false;
+     }
 }
