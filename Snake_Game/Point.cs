@@ -46,4 +46,10 @@ public class Point
                 break;
         }
     }
+
+    public void ClearPoint()
+    {
+        _symbol = ' ';
+        DrawPoint();
+    }
 }

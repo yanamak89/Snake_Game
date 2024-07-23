@@ -19,7 +19,23 @@ class Program
         Console.ResetColor();
 
         Snake snake = new Snake();
-        snake.CreateSnake(5, new Point(5, 5, '~'), DirectionEnum.Right);
+        snake.CreateSnake(
+            5, new Point(5, 5, '~'), 
+            DirectionEnum.Right);
         snake.DrawLine();
+
+        while (true)
+        {
+            Thread.Sleep(100);
+            snake.Move();
+            if (Console.KeyAvailable)
+            {
+                ConsoleKeyInfo key = Console.ReadKey();
+                snake.PressKey(key.Key);
+            }
+        }
+        
+        // ConsoleKeyInfo key = Console.ReadKey();
+        // Console.WriteLine(key.Key);
     }
 }

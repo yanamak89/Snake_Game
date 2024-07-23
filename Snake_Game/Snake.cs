@@ -4,9 +4,9 @@ namespace Snake_Game;
 
 public class Snake : Shape
 {
-     //Realize with singletone
+     // Realize with singletone
 
-
+     private DirectionEnum _direction;
      public Snake()
      {
           _points = new List<Point>();
@@ -14,6 +14,7 @@ public class Snake : Shape
      public Snake CreateSnake(int length,  Point snakeTail,
           DirectionEnum direction)
      {
+          _direction = direction;
           for (int i = 0; i < length; i++)
           {
                Point point = new Point(snakeTail);
@@ -21,5 +22,38 @@ public class Snake : Shape
                _points.Add(point);
           }
           return new Snake();
+     }
+
+     public void Move()
+     {
+          Point tail = _points.First();
+          _points.Remove(tail);
+
+          Point head = new Point(_points.Last());
+          head.SetDirection(1, _direction);
+          _points.Add(head);
+
+          tail.ClearPoint();
+          head.DrawPoint();
+     }
+
+     public void PressKey(ConsoleKey key)
+     {
+          if (key == ConsoleKey.LeftArrow)
+          {
+               _direction = DirectionEnum.Left;
+          }
+          else if(key == ConsoleKey.RightArrow)
+          {
+               _direction = DirectionEnum.Right;
+          }
+          else if(key == ConsoleKey.UpArrow)
+          {
+               _direction = DirectionEnum.Up;
+          }
+          else if(key == ConsoleKey.DownArrow)
+          {
+               _direction = DirectionEnum.Down;
+          }
      }
 }
