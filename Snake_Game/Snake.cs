@@ -11,7 +11,7 @@ public class Snake : Shape
      {
           _points = new List<Point>();
      }
-     public Snake CreateSnake(int length,  Point snakeTail,
+     public void  CreateSnake(int length,  Point snakeTail,
           DirectionEnum direction)
      {
           _direction = direction;
@@ -21,7 +21,6 @@ public class Snake : Shape
                point.SetDirection(i, direction);
                _points.Add(point);
           }
-          return new Snake();
      }
 
      public void Move()
@@ -68,6 +67,17 @@ public class Snake : Shape
                return true;
           }
 
+          return false;
+     }
+
+     public bool CollisionWithOwnTail()
+     {
+          Point head = _points.Last();
+          for (int i = 0; i < _points.Count - 1; i++)
+          {
+               if (head.ComparePoints(_points[i]))
+                    return true;
+          }
           return false;
      }
 }

@@ -33,7 +33,7 @@ class Program
 
         while (true)
         {
-            if (line.Collision(snake))
+            if (line.Collision(snake) || snake.CollisionWithOwnTail())
             {
                 break;
             }
