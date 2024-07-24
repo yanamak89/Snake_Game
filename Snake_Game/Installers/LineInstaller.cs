@@ -26,4 +26,15 @@ public class LineInstaller
             item.DrawLine();
         }
     }
+
+    public bool Collision(Shape shape)
+    {
+        foreach (var item in _shapes)
+        {
+            if (item.Collision(shape))
+                return true;
+        }
+
+        return false;
+    }
 }
