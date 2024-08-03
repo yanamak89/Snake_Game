@@ -1,0 +1,26 @@
+SnakeGame/
+|-- src/
+|   |-- Snake_Game/
+|       |-- Enums/
+|       |-- Factory/
+|       |-- Helper/
+|       |-- Installers/
+|       |-- Lines/
+|       |-- UserService/
+|       |-- UI/
+|       |-- Program.cs
+|       |-- GamePlay.cs
+|       |-- Snake.cs
+|       |-- Point.cs
+|-- tests/
+|   |-- SnakeGame.Tests/
+|       |-- Factory/
+|       |-- Helper/
+|       |-- Installers/
+|       |-- Lines/
+|       |-- UserService/
+|       |-- UI/
+|       |-- GamePlayTests.cs
+|       |-- SnakeTests.cs
+|       |-- PointTests.cs
+|-- SnakeGame.sln

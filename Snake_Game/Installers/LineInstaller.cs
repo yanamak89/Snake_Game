@@ -4,7 +4,7 @@ namespace Snake_Game.Installers;
 
 public class LineInstaller
 {
-    private List<Shape> _shapes;
+    List<Shape> _shapes;
 
     public LineInstaller()
     {
@@ -36,5 +36,10 @@ public class LineInstaller
         }
 
         return false;
+    }
+
+    public List<Shape> GetShape()
+    {
+        return _shapes;
     }
 }

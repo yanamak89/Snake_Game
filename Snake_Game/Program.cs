@@ -1,27 +1,22 @@
-﻿using Snake_Game;
-using Snake_Game.Enums;
-using Snake_Game.Factory;
-using Snake_Game.Helper;
-using Snake_Game.Installers;
-using Snake_Game.Lines;
-using Snake_Game.UI;
+﻿using Snake_Game.UI;
 using Snake_Game.UserService;
 
-
-class Program
+namespace Snake_Game
 {
-    // update with solid
-    static void Main(string[] args)
+    class Program
     {
-        UIService uiService = new UIService();
-        uiService.GameMenu();
-        
-        while (true)
+        static void Main(string[] args)
         {
-            ConsoleKeyInfo key = Console.ReadKey();
-            
-            uiService.GetCommand(key.Key);
-            
+            var gamePlay = new GamePlay();
+            var userService = new UserServices.UserService();
+            var uiService = new UIService(gamePlay, userService);
+
+            uiService.GameMenu();
+            while (true)
+            {
+                var key = Console.ReadKey(true).Key;
+                uiService.GetCommand(key);
+            }
         }
     }
 }

@@ -2,7 +2,7 @@ namespace Snake_Game;
 
 public class Shape
 {
-    protected List<Point> _points;
+    protected List<Point> _points = new List<Point>(); // Ініціалізуйте поле
 
     public void DrawLine()
     {

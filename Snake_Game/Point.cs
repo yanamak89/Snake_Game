@@ -8,6 +8,15 @@ public class Point
     private int _top;
     private char _symbol;
 
+    public int Left
+    {
+        get { return _left; }
+    } 
+    public int Top
+    {
+        get { return _top; }
+    }
+
     public char Symbol
     {
         get { return _symbol;}

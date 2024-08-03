@@ -7,6 +7,12 @@ public class UIService
     private GamePlay _gamePlay = new GamePlay();
     private UserServices.UserService _userService = new UserServices.UserService();
     private User _user = new User();
+    
+    public UIService(GamePlay gamePlay, UserServices.UserService userService)
+    {
+        _gamePlay = gamePlay;
+        _userService = userService;
+    }
     public void GameMenu()
     {
         Console.Clear();
